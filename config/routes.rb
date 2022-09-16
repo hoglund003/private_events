@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :events, only: [:index]
+  get 'users/show'
+  devise_for :users, :path => 'u'
+  resources :users
+  resources :events, only: [:index, :show]
   root "events#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
