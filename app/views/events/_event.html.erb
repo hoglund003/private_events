@@ -1,0 +1,13 @@
+<div class="card">
+  <p><%= event.title %></p>
+  <p>
+    <%= event.description %>
+  </p>
+  <p>
+    Time and place: <%= event.datetime.to_s(:short) %>, 
+    at <%= event.location %>
+  </p>
+  <p>
+    Creator: <%= link_to event.creator.email, user_path(event.creator) %>
+  </p>
+</div>
