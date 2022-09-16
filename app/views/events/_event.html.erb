@@ -8,6 +8,9 @@
     at <%= event.location %>
   </p>
   <p>
+    View <%= link_to "this event", event_path(event) %>
+  </p>
+  <p>
     Creator: <%= link_to event.creator.email, user_path(event.creator) %>
   </p>
 </div>
