@@ -1,0 +1,16 @@
+<h1>All events</h1>
+
+<% @events.each do |event| %>
+  
+  <div class="card">
+    <p><%= event.title %></p>
+    <p>
+      <%= event.description %>
+    </p>
+    <p>
+      Time and place: <%= event.datetime.to_s(:short) %>, 
+      at <%= event.location %>
+    </p>
+  </div>
+
+<% end %>
