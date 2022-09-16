@@ -1,0 +1,11 @@
+<h1><%= @event.title %></h1>
+<h2>Where: <%= @event.location %></h2>
+<h2>When: <%= @event.datetime.to_s(:short) %></h2>
+
+<h3>Description: </h3>
+<p>
+  <%= @event.description %>
+</p>
+
+
+<p><%= @event.creator.email %></p>
