@@ -11,6 +11,9 @@
       Time and place: <%= event.datetime.to_s(:short) %>, 
       at <%= event.location %>
     </p>
+    <p>
+      Creator: <%= event.creator.email %>
+    </p>
   </div>
 
 <% end %>
