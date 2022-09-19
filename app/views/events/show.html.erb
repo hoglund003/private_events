@@ -7,6 +7,8 @@
   <%= @event.description %>
 </p>
 
+<p><%= @event.creator.email %></p>
+
 <% if @event.attendees.include?(current_user) %>
   <%= button_to "Cancle attendance", event_event_attendee_path(@event, current_user.id), method: :delete %>
 <% else %>
@@ -14,6 +16,12 @@
 <% end %>
 
 <span>Count: <%= @event.attendees.count %></span>
-
-
-<p><%= @event.creator.email %></p>
+<br>
+<span>All attendees:</span>
+<ul>
+  <% @event.attendees.each do |attendee| %>
+    <li>
+      <%= attendee.email %>
+    </li>
+  <% end %>
+</ul>
