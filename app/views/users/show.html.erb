@@ -6,9 +6,14 @@
 <h3><%= @user.email %>'s attended events: </h3>
 
 <ul>
-  <% @user.attended_events.each do |event| %>
+  <% @user.attended_events.upcoming.each do |event| %>
     <li>
-      <%= link_to event.title, event_path(event) %>
+      <%= link_to event.title, event_path(event) %>, upcoming
+    </li>
+  <% end %>
+  <% @user.attended_events.past.each do |event| %>
+    <li>
+      <%= link_to event.title, event_path(event) %>, past
     </li>
   <% end %>
 </ul>
