@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users, :path => 'u'
   resources :users
-  resources :events, only: [:index, :show, :new, :create] do 
+  resources :events do 
     resources :event_attendees, only: [:create, :destroy]
   end
 
