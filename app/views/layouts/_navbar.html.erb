@@ -1,0 +1,17 @@
+<nav>
+  <ul>
+    <li><%= link_to "All events" %></li>
+      <% if user_signed_in? %>
+        <li>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        </li>
+        <li>
+          <%= button_to "My profile", current_user, method: :get %>
+        </li>
+      <% else %>
+        <li>
+          <%= button_to "Log In", new_user_session_path, :method => :get %>
+        </li>
+      <% end %>
+  </ul>
+</nav>
