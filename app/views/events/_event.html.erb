@@ -1,20 +1,22 @@
 <div class="card">
-  <p><%= event.title %></p>
-  <p>
+  <p class="title"><%= event.title %></p>
+  <p class="description">
     <%= event.description %>
   </p>
-  <p>
+  <p class="datetime">
     Time and place: <%= event.datetime.to_s(:short) %>, 
     at <%= event.location %>
   </p>
-  <p>
+  <p class="link">
     View <%= link_to "this event", event_path(event) %>
   </p>
-  <p>
+  <p class="creator">
     Creator: <%= link_to event.creator.email, user_path(event.creator) %>
   </p>
   <% if user_signed_in? && event.creator == current_user %>
-    <%= button_to "Edit event", edit_event_path(event), method: :get %>
-    <%= button_to "Delete event", event_path(event), method: :delete %>
+    <div class="actions">
+      <%= button_to "Edit event", edit_event_path(event), method: :get %>
+      <%= button_to "Delete event", event_path(event), method: :delete %>
+    </div>
   <% end %>
 </div>
