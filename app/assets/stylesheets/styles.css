@@ -79,3 +79,7 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0.2rem;
 }
+
+.content-container {
+  margin: 0.2rem 3rem;
+}
