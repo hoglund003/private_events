@@ -59,7 +59,18 @@ nav button {
 }
 
 .card .actions {
+  padding: 0.4rem 0;
+
   display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  padding: 0.4rem;
+  border: none;
+  border: 2px solid var(--main-orange);
+  border-radius: 0.2rem;
+  background-color: transparent;
 }
 
 .grid-container {
