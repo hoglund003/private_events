@@ -13,7 +13,7 @@
   <p>
     Creator: <%= link_to event.creator.email, user_path(event.creator) %>
   </p>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && event.creator == current_user %>
     <%= button_to "Edit event", edit_event_path(event), method: :get %>
     <%= button_to "Delete event", event_path(event), method: :delete %>
   <% end %>
